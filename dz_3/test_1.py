@@ -17,7 +17,6 @@ def test_step1(browser):
     assert testpage.get_error_text() == "401"
     testpage.driver.close()
 
-
 def test_step2(browser):
     logging.info("Test2 starting")
     testpage = OperationsHelpers(browser)
@@ -26,7 +25,6 @@ def test_step2(browser):
     testpage.enter_pass("26f005fa86")
     testpage.click_login_button()
     assert testpage.get_user() == "Home"
-
 
 def test_step3(browser):
     logging.info("Test3 starting")
