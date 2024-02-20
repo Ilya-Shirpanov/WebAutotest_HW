@@ -1,17 +1,28 @@
-from func import get_post
 import requests
 import yaml
+import logging
 
-with open("config.yaml", "r") as f:
+with open("testdata.yaml", "r") as f:
     data = yaml.safe_load(f)
 
 
-def test_1(login):
+def get_post(token):
+    resource = requests.get("https://test-stand.gb.ru/api/posts",
+                            headers={"X-Auth-Token": token},
+                            params={"owner": "notMe"})
+
+    return resource.json()
+
+
+def test_1(login, send_email):
+    logging.info('Test1: API start loging')
     result = get_post(login)['data']
+    logging.debug(f"get request return: {result}")
     assert 30237 , "test_1 fail"
 
 
-def test_2(login):
+def test_2(login, send_email):
+    logging.info("Test2: API Create post")
     result1 = requests.post(data['address'],
                             headers={"X-Auth-Token": login},
                             params={'title': data['title'], 'description': data['description'],

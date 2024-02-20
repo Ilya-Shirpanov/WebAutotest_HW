@@ -1,4 +1,6 @@
 address: https://test-stand.gb.ru/api/posts
-address_1: https://test-stand.gb.ru/gateway/login
-username: pov
-password: 26f005fa86
+login: pov
+passwd: 26f005fa86
+title: 'new post test'
+description: 'Hello World!'
+content: 'Hello World!'

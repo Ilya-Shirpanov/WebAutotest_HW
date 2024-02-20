@@ -3,4 +3,6 @@ sleep_time: 3
 browser: chrome
 login: 'pov'
 passwd: '26f005fa86'
-sleep_time_1: 5
+title: 'TEST123'
+description: 'description_test'
+content: 'Hello World!'
