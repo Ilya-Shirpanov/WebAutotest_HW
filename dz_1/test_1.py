@@ -8,7 +8,11 @@ with open("config.yaml", "r") as f:
 
 def test_1(login):
     result = get_post(login)['data']
-    assert 30237 , "test_1 fail"
+    lst = []
+    for item in result:
+        lst.append(item['id'])
+    print(lst)
+    assert 30237 in lst, "test_1 fail"
 
 
 def test_2(login):

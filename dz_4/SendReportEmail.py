@@ -14,14 +14,14 @@ def sendmail():
     msg = MIMEMultipart()
     msg['From'] = fromaddres
     msg['To'] = toaddr
-    msg['Subject'] = "Привет от питона"
+    msg['Subject'] = "Автотест письмо"
 
     with open(reportname, "rb") as f:
         part = MIMEApplication(f.read(), Name=basename(reportname))
         part['Content-Disposition'] = 'attachment; filename="%s"' % basename(reportname)
         msg.attach(part)
     #
-    body = "Это пробное сообщение"
+    body = "Тест"
     msg.attach(MIMEText(body, 'plain'))
     server = smtplib.SMTP_SSL('smtp.mail.ru', 465)
 
